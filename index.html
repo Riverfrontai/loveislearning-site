@@ -12,13 +12,14 @@
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800&family=Inter:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <link rel="preload" href="/Tutor/Megan%20Gabelman%20Charles%20Profile%20Pic.jpg" as="image">
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body data-acuity-url="https://app.acuityscheduling.com/schedule.php?owner=36431140&ref=embedded_csp">
   <header class="container header">
     <div class="brand">Love Is Learning</div>
-    <nav>
+    <nav aria-label="Primary">
       <a href="#why">Why us</a>
       <a href="#results">Results</a>
       <a href="#faq">FAQ</a>
@@ -28,18 +29,30 @@
 
   <main>
     <section class="hero container">
-      <h1>Reading growth you can see — with tutors parents love</h1>
-      <p>UFLI-aligned diagnostics, live 1:1 sessions, and clear weekly updates. Simple scheduling, secure links, visible progress.</p>
+      <h1>Faster reading growth backed by UFLI science.</h1>
+      <ul class="hero-points">
+        <li>Free UFLI assessment</li>
+        <li>Live 1:1 virtual sessions</li>
+        <li>Weekly parent reports</li>
+        <li>Easy scheduling & payment</li>
+      </ul>
       <div class="cta">
-        <a class="btn" href="#book">Book your assessment</a>
-        <span class="note">First assessment included. No commitment.</span>
+        <a class="btn" href="#book">Get a free reading assessment</a>
+        <span class="note">No commitment. Flexible scheduling.</span>
       </div>
       <p class="muted" style="margin-top:12px;">Trusted by families for consistency, clarity, and results.</p>
     </section>
 
-    <section class="container card" style="margin-top: -8px;">
-      <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;">
-        <div><strong>Certified, background-checked tutors</strong></div>
+    <section class="container" aria-label="Social proof">
+    <div class="card" style="display:flex;gap:10px;align-items:center;justify-content:center;">
+    <span aria-hidden="true" style="color:var(--brand);font-size:20px;">★★★★★</span>
+        <span class="muted">4.9/5 from 32 families</span>
+      </div>
+    </section>
+ 
+     <section class="container card" style="margin-top: -8px;">
+       <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;">
+         <div><strong>Certified, background-checked tutors</strong></div>
         <div>UFLI-aligned placement</div>
         <div>Secure, private sessions</div>
         <div>Clear weekly recaps</div>
@@ -117,7 +130,7 @@
 
     <section id="tutor" class="container split">
       <div class="card" style="display:flex;gap:16px;align-items:flex-start;">
-        <img class="tutor-photo" src="Tutor/Megan%20Gabelman%20Charles%20Profile%20Pic.jpg" alt="Megan M. Gabelman-Charles, Ed.M."/>
+        <img class="tutor-photo" src="Tutor/Megan%20Gabelman%20Charles%20Profile%20Pic.jpg" alt="Megan M. Gabelman-Charles, Ed.M." width="160" height="160" loading="lazy"/>
         <div>
           <h2 style="margin-top:0;">Meet your tutor</h2>
           <h3 style="margin:4px 0 8px;">Megan M. Gabelman-Charles, Ed.M.</h3>
@@ -154,7 +167,12 @@
     </section>
   </main>
 
-  <footer class="container footer">
+  <!-- Sticky mobile CTA -->
+  <nav class="sticky-cta" aria-label="Mobile booking">
+    <a class="btn" href="#book">Free assessment</a>
+  </nav>
+ 
+   <footer class="container footer">
   <div>© <span id="year"></span> Love Is Learning</div>
   <div class="legal">Evidence-based literacy tutoring</div>
   </footer>
@@ -162,7 +180,7 @@
   <!-- Floating assistant widget -->
   <div id="assistant" class="assistant-widget" style="display:none;">
   <button class="assistant-close" aria-label="Close">×</button>
-     <div class="assistant-bubble">
+     <div class="assistant-bubble" aria-live="polite">
     <div class="title">Why our approach works</div>
     <div class="copy">UFLI-aligned placement + targeted practice drives faster reading gains. Weekly recaps make it easy to support at home.</div>
   <div class="assistant-actions">

@@ -24,9 +24,9 @@
   var closeBtn = widget.querySelector('.assistant-close');
   if (closeBtn) closeBtn.addEventListener('click', hideWidget);
 
-  // Show after short delay to avoid covering first paint
-  setTimeout(showWidget, 1200);
-
+  // Show after longer delay to avoid covering first paint and reduce distraction
+  setTimeout(showWidget, 15000);
+  
   // Nudge again after 20s if still open and user hasn’t interacted
   setTimeout(function () {
     if (widget.style.display === 'block') {

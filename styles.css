@@ -19,7 +19,9 @@
   --accent: var(--palette-3);
   --border: var(--palette-8);
 }
-html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: var(--font-body, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif); -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+h1, h2, h3 { font-family: var(--font-heading, 'Nunito', Inter, system-ui, sans-serif); font-weight: 800; }
+p { max-width: 70ch; }
 a { color: var(--brand); text-decoration: none; }
 a:hover { text-decoration: underline; }
 .container { width: min(1040px, 92%); margin: 0 auto; }
@@ -32,6 +34,9 @@ a:hover { text-decoration: underline; }
 .hero { padding: 72px 0 28px; text-align: left; }
 .hero h1 { font-size: clamp(28px, 4.2vw, 46px); margin: 0 0 12px; line-height: 1.08; }
 .hero p { color: var(--muted); font-size: 18px; margin: 0 0 20px; }
+.hero-points { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 8px 16px; padding: 0; margin: 10px 0 12px; list-style: none; }
+.hero-points li::before { content: "✓"; color: var(--brand); margin-right: 8px; }
+@media (max-width: 640px){ .hero-points { grid-template-columns: 1fr; } }
 .btn { display: inline-block; background: linear-gradient(135deg, var(--brand), var(--accent)); color: #000; font-weight: 800; padding: 12px 18px; border-radius: 12px; box-shadow: 0 6px 24px rgba(235, 107, 103, 0.25); }
 .note { margin-left: 12px; color: var(--muted); font-size: 14px; }
 .split { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; padding: 36px 0; }
@@ -52,12 +57,17 @@ footer.footer { padding: 28px 0 64px; color: var(--muted); display: flex; justif
 
 /* Mobile tweaks */
 @media (max-width: 640px) {
-  .header nav a { padding: 6px 8px; }
-  .hero { padding-top: 56px; }
-  .note { display: block; margin: 8px 0 0; }
-  .scheduler iframe { height: 680px; }
+.header nav a { padding: 6px 8px; }
+.hero { padding-top: 56px; }
+.note { display: block; margin: 8px 0 0; }
+.scheduler iframe { height: 680px; }
 }
 
+/* Sticky mobile CTA */
+@media (max-width:700px){
+  .sticky-cta{position:fixed;bottom:0;left:0;right:0;padding:10px 14px;background:var(--bg);box-shadow:0 -2px 12px rgba(0,0,0,.08);display:flex;justify-content:center;z-index:60}
+}
+ 
 /* Floating reminder widget */
 .assistant-widget { position: fixed; right: 16px; bottom: 16px; z-index: 50; max-width: 320px; }
 .assistant-bubble { background: #ffffff; color: var(--text); border: 1px solid var(--border); border-radius: 14px; box-shadow: 0 10px 30px rgba(0,0,0,0.12); padding: 12px 14px; }
