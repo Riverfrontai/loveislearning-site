@@ -22,12 +22,14 @@
     <nav aria-label="Primary">
       <a href="#why">Why us</a>
       <a href="#results">Results</a>
+      <a href="#tutor">Tutor</a>
       <a href="#faq">FAQ</a>
       <a class="btn" href="#book">Book now</a>
     </nav>
   </header>
 
   <main>
+    <!-- Hero -->
     <section class="hero container">
       <h1>Faster reading growth backed by UFLI science.</h1>
       <ul class="hero-points">
@@ -43,61 +45,15 @@
       <p class="muted" style="margin-top:12px;">Trusted by families for consistency, clarity, and results.</p>
     </section>
 
+    <!-- Proof strip -->
     <section class="container" aria-label="Social proof">
-    <div class="card" style="display:flex;gap:10px;align-items:center;justify-content:center;">
-    <span aria-hidden="true" style="color:var(--brand);font-size:20px;">★★★★★</span>
+      <div class="card" style="display:flex;gap:10px;align-items:center;justify-content:center;">
+        <span aria-hidden="true" style="color:var(--brand);font-size:20px;">★★★★★</span>
         <span class="muted">4.9/5 from 32 families</span>
       </div>
     </section>
- 
-     <section class="container card" style="margin-top: -8px;">
-       <div style="display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;">
-         <div><strong>Certified, background-checked tutors</strong></div>
-        <div>UFLI-aligned placement</div>
-        <div>Secure, private sessions</div>
-        <div>Clear weekly recaps</div>
-      </div>
-    </section>
 
-    <section id="why" class="container split">
-      <div>
-        <h2>What you’ll get</h2>
-        <ul class="benefits">
-          <li><strong>UFLI-based placement</strong> to pinpoint the right starting point</li>
-          <li><strong>Live, interactive sessions</strong> designed for engagement</li>
-          <li><strong>Clear weekly reports</strong> with practice you can use at home</li>
-          <li><strong>Easy scheduling & payments</strong> with instant confirmations</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>How it works</h3>
-        <ol>
-          <li>Book a time that works for your family</li>
-          <li>Complete the quick intake form</li>
-          <li>Join your secure session link at start time</li>
-          <li>Receive your post-session summary + next steps</li>
-        </ol>
-      </div>
-    </section>
-
-    <section id="book" class="container">
-      <h2>Book a session</h2>
-      <p class="muted">Use our scheduler below. After you book, you’ll get a confirmation email with your session link.</p>
-
-      <!--
-        Scheduler embed
-        Replace ACUITY_EMBED_URL with your Acuity Scheduling embed URL.
-        Example: https://app.squarespace.com/acuity/schedule.php?owner=YOUR_OWNER_ID
-        You can also set the body data attribute data-acuity-url in Netlify’s HTML snippet injection.
-      -->
-      <div class="scheduler">
-        <iframe id="acuity-embed" title="Schedule with Love Is Learning" allowtransparency="true" frameborder="0" allow="payment" src="https://app.acuityscheduling.com/schedule.php?owner=36431140&ref=embedded_csp"></iframe>
-        <div id="scheduler-fallback" class="fallback hidden">
-          <p>Our scheduler will appear here. If you don’t see it, please <a href="#contact">contact us</a> and we’ll get you scheduled right away.</p>
-        </div>
-      </div>
-    </section>
-
+    <!-- Results -->
     <section id="results" class="container">
       <h2>Results parents love</h2>
       <div class="split">
@@ -112,22 +68,7 @@
       </div>
     </section>
 
-    <section class="container split">
-      <div class="card">
-        <h3>Privacy & Safety</h3>
-        <ul class="benefits">
-          <li>Secure, private sessions</li>
-          <li>Background-checked tutors</li>
-          <li>Data handled with care</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3>Transparent pricing</h3>
-        <p>No surprises. First assessment included. Simple, flexible scheduling.</p>
-        <p><a class="btn" href="#book">See available times</a></p>
-      </div>
-    </section>
-
+    <!-- Tutor -->
     <section id="tutor" class="container split">
       <div class="card" style="display:flex;gap:16px;align-items:flex-start;">
         <img class="tutor-photo" src="Tutor/Megan%20Gabelman%20Charles%20Profile%20Pic.jpg" alt="Megan M. Gabelman-Charles, Ed.M." width="160" height="160" loading="lazy"/>
@@ -145,6 +86,71 @@
       </div>
     </section>
 
+    <!-- Why + How -->
+    <section id="why" class="container split">
+      <div>
+        <h2>Why families choose us</h2>
+        <ul class="benefits">
+          <li><strong>UFLI-based placement</strong> to pinpoint the right starting point</li>
+          <li><strong>Live, interactive sessions</strong> designed for engagement</li>
+          <li><strong>Clear weekly reports</strong> with practice you can use at home</li>
+          <li><strong>Easy scheduling & payments</strong> with instant confirmations</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>How it works</h3>
+        <ol class="stepper">
+          <li><span class="tag">1</span> Free UFLI assessment to set the starting point</li>
+          <li><span class="tag">2</span> Book your first session at a time that works</li>
+          <li><span class="tag">3</span> Join your secure link — we teach, practice, and review</li>
+          <li><span class="tag">4</span> Get your weekly recap + home practice</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Subjects & Grades -->
+    <section id="subjects" class="container">
+      <h2>Subjects & Grades</h2>
+      <div class="grid">
+        <div class="pill">Reading (Foundational)</div>
+        <div class="pill">Writing (K–5)</div>
+        <div class="pill">Math (K–5)</div>
+        <div class="pill">English Learners (K–12)</div>
+        <div class="pill">Homework Support</div>
+        <div class="pill">Confidence & Study Skills</div>
+      </div>
+    </section>
+
+    <!-- Booking -->
+    <section id="book" class="container">
+      <h2>Book a session</h2>
+      <p class="muted">Use our scheduler below. After you book, you’ll get a confirmation email with your session link.</p>
+      <div class="scheduler">
+        <iframe id="acuity-embed" title="Schedule with Love Is Learning" allowtransparency="true" frameborder="0" allow="payment" src="https://app.acuityscheduling.com/schedule.php?owner=36431140&ref=embedded_csp"></iframe>
+        <div id="scheduler-fallback" class="fallback hidden">
+          <p>Our scheduler will appear here. If you don’t see it, please <a href="#contact">contact us</a> and we’ll get you scheduled right away.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing & Privacy -->
+    <section class="container split">
+      <div class="card">
+        <h3>Transparent pricing</h3>
+        <p>No surprises. First assessment included. Simple, flexible scheduling.</n>
+        <p><a class="btn" href="#book">See available times</a></p>
+      </div>
+      <div class="card">
+        <h3>Privacy & Safety</h3>
+        <ul class="benefits">
+          <li>Secure, private sessions</li>
+          <li>Background-checked tutors</li>
+          <li>Data handled with care</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FAQ -->
     <section id="faq" class="container">
       <h2>FAQ</h2>
       <details>
@@ -161,6 +167,7 @@
       </details>
     </section>
 
+    <!-- Contact -->
     <section id="contact" class="container">
       <h2>Contact</h2>
       <p>Email: <a href="mailto:hello@loveislearning.co">hello@loveislearning.co</a></p>
@@ -172,23 +179,23 @@
     <a class="btn" href="#book">Free assessment</a>
   </nav>
  
-   <footer class="container footer">
-  <div>© <span id="year"></span> Love Is Learning</div>
-  <div class="legal">Evidence-based literacy tutoring</div>
+  <footer class="container footer">
+    <div>© <span id="year"></span> Love Is Learning</div>
+    <div class="legal">Evidence-based literacy tutoring</div>
   </footer>
 
   <!-- Floating assistant widget -->
   <div id="assistant" class="assistant-widget" style="display:none;">
-  <button class="assistant-close" aria-label="Close">×</button>
-     <div class="assistant-bubble" aria-live="polite">
-    <div class="title">Why our approach works</div>
-    <div class="copy">UFLI-aligned placement + targeted practice drives faster reading gains. Weekly recaps make it easy to support at home.</div>
-  <div class="assistant-actions">
-    <a class="btn" href="#why">See how</a>
-    <a class="btn" href="#book">Book now</a>
+    <button class="assistant-close" aria-label="Close">×</button>
+    <div class="assistant-bubble" aria-live="polite">
+      <div class="title">Why our approach works</div>
+      <div class="copy">UFLI-aligned placement + targeted practice drives faster reading gains. Weekly recaps make it easy to support at home.</div>
+      <div class="assistant-actions">
+        <a class="btn" href="#why">See how</a>
+        <a class="btn" href="#book">Book now</a>
+      </div>
+    </div>
   </div>
-  </div>
-   </div>
 
   <script src="/app.js" defer></script>
 </body>
