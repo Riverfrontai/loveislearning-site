@@ -122,12 +122,17 @@ footer.footer { padding: 28px 0 64px; color: var(--muted); display: flex; justif
 .assistant-close { position:absolute; top:-8px; right:-8px; background: var(--brand); color:#000; border:none; width:28px; height:28px; border-radius:999px; cursor:pointer; box-shadow: 0 6px 18px rgba(235, 107, 103, 0.25); }
 @media (max-width: 480px) { .assistant-widget { left: 12px; right: 12px; bottom: 12px; max-width: none; } }
 
-/* Right-side philosophical panel */
-.philo { position: fixed; right: 16px; top: 96px; width: 320px; z-index: 40; }
-.philo .panel { background:#fff; border:1px solid var(--border); border-radius: 14px; box-shadow: 0 12px 30px rgba(0,0,0,.10); padding: 14px; }
-.philo .hd { display:flex; justify-content: space-between; align-items:center; gap:8px; margin-bottom: 8px; }
-.philo .hd .title { font-weight: 800; color: var(--brand); }
-.philo .msg { color: var(--muted); }
-.philo .act { margin-top:10px; display:flex; gap:8px; }
-.philo button.min { background: transparent; border:none; color: var(--muted); cursor:pointer; }
+/* Right-side philosophical panel (subtle, bottom-right) */
+.philo { position: fixed; right: 16px; bottom: 16px; width: 300px; z-index: 40; opacity: 0.92; transition: opacity .2s ease, transform .2s ease; }
+.philo:hover { opacity: 1; transform: translateY(-2px); }
+.philo .panel { background: rgba(255,255,255,0.95); border:1px solid var(--border); border-radius: 14px; box-shadow: 0 10px 24px rgba(0,0,0,.08); padding: 12px 12px; }
+.philo .hd { display:flex; justify-content: space-between; align-items:center; gap:8px; margin-bottom: 6px; }
+.philo .hd .title { font-weight: 800; color: var(--brand); font-size: 14px; }
+.philo .msg { color: var(--muted); font-size: 14px; }
+.philo .act { margin-top:8px; display:flex; gap:8px; }
+.philo .act .btn { padding: 8px 10px; font-size: 13px; border-radius: 10px; }
+.philo button.min { background: transparent; border:none; color: var(--muted); cursor:pointer; font-size: 18px; line-height: 1; }
 @media (max-width: 1024px){ .philo { display: none; } }
+
+/* Prevent overlap with assistant on desktop */
+@media (min-width: 1025px){ .assistant-widget { right: 336px; } }
