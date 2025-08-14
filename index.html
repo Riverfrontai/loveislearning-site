@@ -138,31 +138,23 @@
   </main>
 
   <footer class="container footer">
-    <div>© <span id="year"></span> Love Is Learning</div>
-    <div class="legal">Evidence-based literacy tutoring</div>
+  <div>© <span id="year"></span> Love Is Learning</div>
+  <div class="legal">Evidence-based literacy tutoring</div>
   </footer>
 
-  <script>
-    // Set current year
-    document.getElementById('year').textContent = new Date().getFullYear();
+  <!-- Floating assistant widget -->
+  <div id="assistant" class="assistant-widget" style="display:none;">
+  <button class="assistant-close" aria-label="Close">×</button>
+     <div class="assistant-bubble">
+    <div class="title">Why our approach works</div>
+    <div class="copy">UFLI-aligned placement + targeted practice drives faster reading gains. Weekly recaps make it easy to support at home.</div>
+  <div class="assistant-actions">
+    <a class="btn" href="#why">See how</a>
+    <a class="btn" href="#book">Book now</a>
+  </div>
+  </div>
+   </div>
 
-    // Configure scheduler iframe
-    (function() {
-      const iframe = document.getElementById('acuity-embed');
-      const fallback = document.getElementById('scheduler-fallback');
-      const urlFromBody = document.body.getAttribute('data-acuity-url') || '';
-      const urlFromQuery = new URLSearchParams(window.location.search).get('acuity');
-      const ACUITY_EMBED_URL = urlFromQuery || urlFromBody || '';
-
-      if (ACUITY_EMBED_URL) {
-        iframe.src = ACUITY_EMBED_URL;
-        iframe.classList.add('loaded');
-        fallback.classList.add('hidden');
-      } else {
-        iframe.classList.remove('loaded');
-        fallback.classList.remove('hidden');
-      }
-    })();
-  </script>
+  <script src="/app.js" defer></script>
 </body>
 </html>
