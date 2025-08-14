@@ -46,6 +46,10 @@ a:hover { text-decoration: underline; }
 .fallback.hidden { display: none; }
 footer.footer { padding: 28px 0 64px; color: var(--muted); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
+/* Tutor photo */
+.tutor-photo { width: 160px; height: 160px; object-fit: cover; border-radius: 50%; border: 2px solid var(--border); flex: 0 0 auto; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+@media (max-width: 640px) { .tutor-photo { width: 120px; height: 120px; } }
+
 /* Mobile tweaks */
 @media (max-width: 640px) {
   .header nav a { padding: 6px 8px; }
