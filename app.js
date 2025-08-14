@@ -11,6 +11,30 @@
   var toast = document.getElementById('toast');
   if (!widget) return;
 
+  // Philosophical reflections (desktop)
+  var PH_KEY = 'lil_philo_hidden_v1';
+  var philo = document.getElementById('philo');
+  var phMsg = document.getElementById('philo-msg');
+  var phHide = philo ? philo.querySelector('.min') : null;
+  var philoHidden = false;
+  try { philoHidden = localStorage.getItem(PH_KEY) === '1'; } catch(e){}
+  if (philo && philoHidden) philo.style.display = 'none';
+  var thoughts = [
+    'Learning is remembering — Plato. We start where your child is and build forward.',
+    'We become what we repeatedly do — Aristotle. Practice + feedback = progress.',
+    'Reading confidence grows when effort is seen. We reflect that back to kids and parents.',
+    'UFLI gives a precise starting point so no time is wasted.',
+    'Small wins compound. We celebrate progress weekly to sustain motivation.'
+  ];
+  var tIdx = 0;
+  function rotateThought(){
+    if (!phMsg) return;
+    tIdx = (tIdx + 1) % thoughts.length;
+    phMsg.textContent = thoughts[tIdx];
+  }
+  if (philo && !philoHidden) setInterval(rotateThought, 15000);
+  if (phHide) phHide.addEventListener('click', function(){ philo.style.display='none'; try{localStorage.setItem(PH_KEY,'1')}catch(e){} });
+
   var dismissed = false;
   var toastSeen = false;
   try {
