@@ -77,4 +77,18 @@
     }, { threshold: 0.2 });
     io.observe(book);
   }
+
+  // Reveal-on-scroll animations
+  if ('IntersectionObserver' in window) {
+    var reveals = document.querySelectorAll('.reveal');
+    var ro = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          ro.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    reveals.forEach(function(el){ ro.observe(el); });
+  }
 })();
