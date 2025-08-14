@@ -63,8 +63,8 @@ a:hover { text-decoration: underline; }
 footer.footer { padding: 28px 0 64px; color: var(--muted); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
 
 /* Tutor photo */
-.tutor-photo { width: 160px; height: 160px; object-fit: cover; border-radius: 50%; border: 2px solid var(--border); flex: 0 0 auto; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
-@media (max-width: 640px) { .tutor-photo { width: 120px; height: 120px; } }
+.tutor-photo { width: 180px; height: 180px; object-fit: cover; object-position: 50% 20%; border-radius: 50%; border: 2px solid var(--border); flex: 0 0 auto; box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+@media (max-width: 640px) { .tutor-photo { width: 140px; height: 140px; object-position: 50% 15%; } }
 
 /* Mobile tweaks */
 @media (max-width: 640px) {
