@@ -9,7 +9,7 @@
   var T_KEY = 'lil_toast_seen_v1';
   var widget = document.getElementById('assistant');
   var toast = document.getElementById('toast');
-  if (!widget) return;
+  // continue script even if widget is missing
 
   // Philosophical reflections (desktop)
   var PH_KEY = 'lil_philo_hidden_v1';
@@ -18,7 +18,11 @@
   var phHide = philo ? philo.querySelector('.min') : null;
   var philoHidden = false;
   try { philoHidden = localStorage.getItem(PH_KEY) === '1'; } catch(e){}
-  if (philo && philoHidden) philo.style.display = 'none';
+  var philoTab = document.getElementById('philo-tab');
+  if (philo && philoHidden) {
+    philo.style.display = 'none';
+    if (philoTab) philoTab.style.display = 'block';
+  }
   var thoughts = [
     'Learning is remembering — Plato. We start where your child is and build forward.',
     'We become what we repeatedly do — Aristotle. Practice + feedback = progress.',
@@ -33,7 +37,16 @@
     phMsg.textContent = thoughts[tIdx];
   }
   if (philo && !philoHidden) setInterval(rotateThought, 15000);
-  if (phHide) phHide.addEventListener('click', function(){ philo.style.display='none'; try{localStorage.setItem(PH_KEY,'1')}catch(e){} });
+  if (phHide) phHide.addEventListener('click', function(){
+    philo.style.display='none';
+    if (philoTab) philoTab.style.display='block';
+    try{localStorage.setItem(PH_KEY,'1')}catch(e){}
+  });
+  if (philoTab) philoTab.addEventListener('click', function(){
+    if (philo) philo.style.display='block';
+    philoTab.style.display='none';
+    try{localStorage.removeItem(PH_KEY)}catch(e){}
+  });
 
   var dismissed = false;
   var toastSeen = false;
@@ -93,9 +106,19 @@
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting && window.matchMedia('(max-width: 640px)').matches) {
-          widget.style.display = 'none';
+          if (widget) widget.style.display = 'none';
         } else if (!dismissed) {
-          widget.style.display = 'block';
+          if (widget) widget.style.display = 'block';
+        }
+        // Also hide reflections panel when booking section in view on any screen
+        if (philo) {
+          if (entry.isIntersecting) {
+            philo.style.opacity = '0.0';
+            philo.style.pointerEvents = 'none';
+          } else {
+            philo.style.opacity = '';
+            philo.style.pointerEvents = '';
+          }
         }
       });
     }, { threshold: 0.2 });

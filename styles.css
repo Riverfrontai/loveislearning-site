@@ -136,3 +136,7 @@ footer.footer { padding: 28px 0 64px; color: var(--muted); display: flex; justif
 
 /* Prevent overlap with assistant on desktop */
 @media (min-width: 1025px){ .assistant-widget { right: 336px; } }
+
+/* Reflections reopen tab */
+.philo-tab { position: fixed; right: 16px; bottom: 16px; width: 42px; height: 42px; border-radius: 999px; border: 1px solid var(--border); background: #fff; color: var(--brand); box-shadow: 0 8px 22px rgba(0,0,0,.08); cursor: pointer; z-index: 39; }
+@media (max-width: 1024px){ .philo-tab { display: none !important; } }
