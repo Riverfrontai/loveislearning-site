@@ -39,8 +39,7 @@ a:hover { text-decoration: underline; }
 .benefits li { margin: 10px 0; }
 .muted { color: var(--muted); }
 .scheduler { position: relative; background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 12px; min-height: 240px; }
-.scheduler iframe { width: 100%; height: 720px; border: 0; background: #ffffff; display: none; border-radius: 8px; }
-.scheduler iframe.loaded { display: block; }
+.scheduler iframe { width: 100%; height: 720px; border: 0; background: #ffffff; display: block; border-radius: 8px; }
 .fallback { color: var(--muted); padding: 12px; }
 .fallback.hidden { display: none; }
 footer.footer { padding: 28px 0 48px; color: var(--muted); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
