@@ -1,0 +1,34 @@
+* { box-sizing: border-box; }
+:root {
+  --bg: #0b0b0f;
+  --card: #12121a;
+  --text: #e8e8ef;
+  --muted: #b5b5c6;
+  --brand: #8bd3ff;
+  --accent: #ffd38b;
+}
+html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.container { width: min(1100px, 92%); margin: 0 auto; }
+.header { display: flex; align-items: center; justify-content: space-between; padding: 18px 0; }
+.header .brand { font-weight: 700; letter-spacing: 0.2px; }
+.header nav a { margin-left: 16px; color: var(--muted); }
+.header nav a:hover { color: var(--text); }
+.hero { padding: 64px 0 32px; text-align: left; }
+.hero h1 { font-size: clamp(28px, 4vw, 44px); margin: 0 0 12px; line-height: 1.1; }
+.hero p { color: var(--muted); font-size: 18px; margin: 0 0 20px; }
+.btn { display: inline-block; background: linear-gradient(135deg, var(--brand), var(--accent)); color: #000; font-weight: 700; padding: 12px 18px; border-radius: 10px; box-shadow: 0 6px 24px rgba(139, 211, 255, 0.25); }
+.note { margin-left: 12px; color: var(--muted); font-size: 14px; }
+.split { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 24px; padding: 32px 0; }
+@media (max-width: 840px) { .split { grid-template-columns: 1fr; } }
+.card { background: var(--card); border: 1px solid #1d1d28; border-radius: 14px; padding: 18px; }
+.benefits { padding-left: 16px; }
+.benefits li { margin: 10px 0; }
+.muted { color: var(--muted); }
+.scheduler { position: relative; background: var(--card); border: 1px solid #1d1d28; border-radius: 14px; padding: 12px; min-height: 240px; }
+.scheduler iframe { width: 100%; height: 720px; border: 0; background: #0f0f16; display: none; border-radius: 8px; }
+.scheduler iframe.loaded { display: block; }
+.fallback { color: var(--muted); padding: 12px; }
+.fallback.hidden { display: none; }
+footer.footer { padding: 28px 0 48px; color: var(--muted); display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }

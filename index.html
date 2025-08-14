@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Love Is Learning — Tutoring that meets every child where they are</title>
+  <meta name="description" content="Evidence-based literacy tutoring with clear parent communication, easy scheduling, and progress you can see." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body data-acuity-url="https://app.acuityscheduling.com/schedule.php?owner=36431140&ref=embedded_csp">
+  <header class="container header">
+    <div class="brand">Love Is Learning</div>
+    <nav>
+      <a href="#why">Why us</a>
+      <a href="#book">Book a session</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container">
+      <h1>Personalized literacy tutoring, powered by care and science</h1>
+      <p>We combine UFLI-aligned diagnostics, engaging live sessions, and clear parent updates to help readers grow with confidence.</p>
+      <div class="cta">
+        <a class="btn" href="#book">Book a session</a>
+        <span class="note">No commitment. First assessment included.</span>
+      </div>
+    </section>
+
+    <section id="why" class="container split">
+      <div>
+        <h2>What you’ll get</h2>
+        <ul class="benefits">
+          <li><strong>UFLI-based placement</strong> to pinpoint the right starting point</li>
+          <li><strong>Live, interactive sessions</strong> designed for engagement</li>
+          <li><strong>Clear weekly reports</strong> with practice you can use at home</li>
+          <li><strong>Easy scheduling & payments</strong> with instant confirmations</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>How it works</h3>
+        <ol>
+          <li>Book a time that works for your family</li>
+          <li>Complete the quick intake form</li>
+          <li>Join your secure session link at start time</li>
+          <li>Receive your post-session summary + next steps</li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="book" class="container">
+      <h2>Book a session</h2>
+      <p class="muted">Use our scheduler below. After you book, you’ll get a confirmation email with your session link.</p>
+
+      <!--
+        Scheduler embed
+        Replace ACUITY_EMBED_URL with your Acuity Scheduling embed URL.
+        Example: https://app.squarespace.com/acuity/schedule.php?owner=YOUR_OWNER_ID
+        You can also set the body data attribute data-acuity-url in Netlify’s HTML snippet injection.
+      -->
+      <div class="scheduler">
+        <iframe id="acuity-embed" title="Schedule with Love Is Learning" allowtransparency="true" frameborder="0"></iframe>
+        <div id="scheduler-fallback" class="fallback hidden">
+          <p>Our scheduler will appear here. If you don’t see it, please <a href="#contact">contact us</a> and we’ll get you scheduled right away.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq" class="container">
+      <h2>FAQ</h2>
+      <details>
+        <summary>What ages do you support?</summary>
+        <p>Early readers through middle school, with individualized plans based on diagnostics.</p>
+      </details>
+      <details>
+        <summary>Do you offer online sessions?</summary>
+        <p>Yes — live, interactive sessions hosted in Lessonspace.</p>
+      </details>
+      <details>
+        <summary>How do payments work?</summary>
+        <p>Payments are handled via Stripe during booking. You’ll receive receipts automatically.</p>
+      </details>
+    </section>
+
+    <section id="contact" class="container">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:hello@loveislearning.co">hello@loveislearning.co</a></p>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <div>© <span id="year"></span> Love Is Learning</div>
+    <div class="legal">Evidence-based literacy tutoring</div>
+  </footer>
+
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Configure scheduler iframe
+    (function() {
+      const iframe = document.getElementById('acuity-embed');
+      const fallback = document.getElementById('scheduler-fallback');
+      const urlFromBody = document.body.getAttribute('data-acuity-url') || '';
+      const urlFromQuery = new URLSearchParams(window.location.search).get('acuity');
+      const ACUITY_EMBED_URL = urlFromQuery || urlFromBody || '';
+
+      if (ACUITY_EMBED_URL) {
+        iframe.src = ACUITY_EMBED_URL;
+        iframe.classList.add('loaded');
+        fallback.classList.add('hidden');
+      } else {
+        iframe.classList.remove('loaded');
+        fallback.classList.remove('hidden');
+      }
+    })();
+  </script>
+</body>
+</html>
