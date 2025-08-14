@@ -6,11 +6,17 @@
 
   // Assistant widget logic
   var A_KEY = 'lil_assistant_dismissed_v1';
+  var T_KEY = 'lil_toast_seen_v1';
   var widget = document.getElementById('assistant');
+  var toast = document.getElementById('toast');
   if (!widget) return;
 
   var dismissed = false;
-  try { dismissed = localStorage.getItem(A_KEY) === '1'; } catch (e) {}
+  var toastSeen = false;
+  try {
+    dismissed = localStorage.getItem(A_KEY) === '1';
+    toastSeen = localStorage.getItem(T_KEY) === '1';
+  } catch (e) {}
 
   function showWidget() {
     if (dismissed) return;
@@ -34,6 +40,28 @@
       setTimeout(function () { widget.classList.remove('pulse'); }, 1200);
     }
   }, 20000);
+
+  // Cliffhanger toast: show once after 45s, or when returning to tab
+  function showToast() {
+    if (!toast || toastSeen) return;
+    toast.classList.add('show');
+  }
+  function hideToast() {
+    if (!toast) return;
+    toast.classList.remove('show');
+    try { localStorage.setItem(T_KEY, '1'); toastSeen = true; } catch (e) {}
+  }
+
+  setTimeout(showToast, 45000);
+  if (toast) {
+    // Hide toast when user clicks a CTA or scrolls to booking
+    toast.addEventListener('click', function (e) {
+      if (e.target.closest('a')) hideToast();
+    });
+  }
+  document.addEventListener('visibilitychange', function(){
+    if (document.visibilityState === 'visible') setTimeout(showToast, 8000);
+  });
 
   // Avoid covering scheduler on mobile: hide when #book is in view
   var book = document.getElementById('book');
