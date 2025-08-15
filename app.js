@@ -147,6 +147,23 @@
       var open = nav.classList.toggle('open');
       toggle.setAttribute('aria-expanded', open);
     });
+    var closeBtn = nav.querySelector('.nav-close');
+    if (closeBtn) closeBtn.addEventListener('click', function(){
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', false);
+    });
+    nav.addEventListener('click', function(e){
+      if (e.target.tagName === 'A' && window.matchMedia('(max-width:700px)').matches) {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', false);
+      }
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', false);
+      }
+    });
   }
 
   // Lazy-load scheduler iframe when near viewport
