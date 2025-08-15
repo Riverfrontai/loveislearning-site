@@ -27,7 +27,7 @@
     'Learning is remembering — Plato. We start where your child is and build forward.',
     'We become what we repeatedly do — Aristotle. Practice + feedback = progress.',
     'Reading confidence grows when effort is seen. We reflect that back to kids and parents.',
-    'UFLI gives a precise starting point so no time is wasted.',
+    'A good diagnostic gives a precise starting point so no time is wasted.',
     'Small wins compound. We celebrate progress weekly to sustain motivation.'
   ];
   var tIdx = 0;
