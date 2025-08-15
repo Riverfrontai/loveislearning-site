@@ -138,4 +138,27 @@
     }, { threshold: 0.1 });
     reveals.forEach(function(el){ ro.observe(el); });
   }
+
+  // Mobile nav toggle (CSP-safe)
+  var nav = document.querySelector('.header nav');
+  var toggle = document.getElementById('nav-toggle');
+  if (toggle && nav) {
+    toggle.addEventListener('click', function(){
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  }
+
+  // Lazy-load scheduler iframe when near viewport
+  var sched = document.querySelector('.scheduler');
+  if (sched && 'IntersectionObserver' in window) {
+    var io2 = new IntersectionObserver(function(e){
+      if (e[0].isIntersecting) {
+        var ifr = document.getElementById('acuity-embed');
+        if (ifr && !ifr.src) ifr.src = sched.getAttribute('data-src');
+        io2.disconnect();
+      }
+    }, { rootMargin: '200px' });
+    io2.observe(sched);
+  }
 })();

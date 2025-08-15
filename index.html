@@ -17,19 +17,21 @@
   <link rel="stylesheet" href="/styles.css" />
 </head>
 <body data-acuity-url="https://app.acuityscheduling.com/schedule.php?owner=36431140&ref=embedded_csp">
-  <header class="container header">
-    <div class="brand">Love Is Learning</div>
-    <nav aria-label="Primary">
-      <a href="#services">Services</a>
-      <a href="#why">How it works</a>
-      <a href="#features">Why us</a>
-      <a href="#results">Results</a>
-      <a href="#tutor">Tutor</a>
+  <header class="container header" role="banner">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="brand">Love Is Learning</div>
+  <button id="nav-toggle" class="nav-toggle" aria-label="Open menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+  <nav id="primary-nav" aria-label="Primary">
+  <a href="#services">Services</a>
+  <a href="#why">How it works</a>
+  <a href="#features">Why us</a>
+  <a href="#results">Results</a>
+    <a href="#tutor">Tutor</a>
       <a class="btn" href="#book">Book now</a>
-    </nav>
+     </nav>
   </header>
-
-  <main>
+ 
+  <main id="main">
     <!-- Hero -->
     <section class="hero container">
       <div class="hero-surface card reveal in-view">
@@ -174,8 +176,8 @@
     <section id="book" class="container">
       <h2>Book a session</h2>
       <p class="muted">Use our scheduler below. After you book, you’ll get a confirmation email with your session link.</p>
-      <div class="scheduler">
-        <iframe id="acuity-embed" title="Schedule with Love Is Learning" allowtransparency="true" frameborder="0" allow="payment" src="https://app.acuityscheduling.com/schedule.php?owner=36431140&ref=embedded_csp"></iframe>
+      <div class="scheduler" data-src="https://app.acuityscheduling.com/schedule.php?owner=36431140&ref=embedded_csp">
+        <iframe id="acuity-embed" title="Schedule with Love Is Learning" allowtransparency="true" frameborder="0" allow="payment" loading="lazy"></iframe>
         <div id="scheduler-fallback" class="fallback hidden">
           <p>Our scheduler will appear here. If you don’t see it, please <a href="#contact">contact us</a> and we’ll get you scheduled right away.</p>
         </div>
