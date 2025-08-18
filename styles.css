@@ -129,10 +129,13 @@ footer.footer { padding: 28px 0 64px; color: var(--muted); display: flex; justif
 
 /* Mobile tweaks */
 @media (max-width: 640px) {
-.header nav a { padding: 6px 8px; }
-.hero { padding-top: 68px; padding-bottom: 28px; }
-.note { display: block; margin: 8px 0 0; }
-.scheduler iframe { height: 680px; }
+  .header nav a { padding: 6px 8px; }
+  .hero { padding-top: 68px; padding-bottom: 28px; }
+  .note { display: block; margin: 8px 0 0; }
+  .scheduler iframe { height: 680px; }
+  /* Center tutor intro content */
+  #tutor .card{ flex-direction: column !important; align-items: center !important; text-align: center; }
+  #tutor .assistant-actions{ justify-content: center; }
 }
 
 /* Cliffhanger toast */
